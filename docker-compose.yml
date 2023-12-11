@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    networks:
+      - minha-rede
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/apifrete?createDatabaseIfNotExist=true&serverTimezone=UTC
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234567
+      MYSQL_DATABASE: apifrete
+      MYSQL_PASSWORD: 1234567
+    ports:
+      - "3307:3306"
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    networks:
+      - minha-rede
+
+networks:
+  minha-rede:
+    driver: bridge
