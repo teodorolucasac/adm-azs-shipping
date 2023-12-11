@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "2709df9c-4ae4-49e6-901a-86152a818e50",
+		"name": "AZShip - API FRETE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23148019"
+	},
+	"item": [
+		{
+			"name": "Carrier",
+			"item": [
+				{
+					"name": "Find Carrier",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/carrier/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"carrier",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Carrier",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/carrier",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"carrier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Carrier",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"TESTE Transporte\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/carrier",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"carrier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Carrier",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"TESTE Transporte Teste 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/carrier/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"carrier",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Carrier",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/carrier/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"carrier",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Freight",
+			"item": [
+				{
+					"name": "Find Freight",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/freight/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"freight",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Freight",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/freight",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"freight"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByAnyAttribute Freight",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v1/freight/search?attributeValue=GROUND&size=5&page=0&sort=weight,asc",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"freight",
+								"search"
+							],
+							"query": [
+								{
+									"key": "attributeValue",
+									"value": "GROUND"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "sort",
+									"value": "weight,asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Freight",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"GROUND\",\r\n    // \"weight\": 30000.0,\r\n    \"cubage\": 30000.0,\r\n    \"originAddress\": \"Avenida Principal, 15, Centro - Uberlandia-MG\",\r\n    \"destinationAddress\": \"Avenida Principal, 25, Centro - São Paulo-SP\",\r\n    \"cost\": 39000,\r\n    // \"shipmentDate\": \"\",\r\n    // \"arrivalDate\": \"\",\r\n    \"carrier\": {\r\n        \"id\": 4\r\n    },\r\n    \"paymentMethod\": \"Crédito\",\r\n    \"notes\": \"Conteúdo: teste 4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/freight",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"freight"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Freight",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"AIR\",\r\n    // \"weight\": 30000.0,\r\n    \"cubage\": 30000.0,\r\n    \"originAddress\": \"Avenida Principal, 15, Centro - Uberlandia-MG\",\r\n    \"destinationAddress\": \"Avenida Principal, 25, Centro - São Paulo-SP\",\r\n    \"cost\": 39000,\r\n    // \"shipmentDate\": \"\",\r\n    // \"arrivalDate\": \"\",\r\n    \"carrier\": {\r\n        \"id\": 4\r\n    },\r\n    \"paymentMethod\": \"Crédito\",\r\n    \"notes\": \"Conteúdo: teste 4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/freight/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"freight",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Freight",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/v1/freight/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"freight",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
